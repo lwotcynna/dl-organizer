@@ -21,7 +21,7 @@ $ python sorter.py
 ```
 <p>It will move the files inside your Download folder to the specified subfolder (according to the file extension) created by <code>$ sh mdir.sh</code>.
 <br>Once it starts, it will always running in the background until you stop it by hit <code>ctrl+c</code> or
- the Termux app is closed</p>.
+ the Termux app is closed.</p>
 Have a nice day, friends ✨
 <h3>This project was inspired by:
 https://youtu.be/JNl2krTKf-s
