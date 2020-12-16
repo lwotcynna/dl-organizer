@@ -1,5 +1,6 @@
 mkdir /sdcard/Download
 mkdir /sdcard/Download/Video
+mkdir /sdcard/Download/Images
 mkdir /sdcard/Download/Music
 mkdir /sdcard/Download/Documents
 mkdir /sdcard/Download/Apps
