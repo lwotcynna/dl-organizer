@@ -3,7 +3,7 @@ import os, shutil
 
 # Download path
 dl = "/sdcard/Download/"
-folders = ["Video","Music","Apps","Documents","Icons","Compressed","Others"]
+folders = ["Video","Images","Music","Apps","Documents","Icons","Compressed","Others"]
 
 # Declaring files' formats with arrays
 vids = ["mp4","mkv","avi","mov"]
