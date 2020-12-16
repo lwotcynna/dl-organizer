@@ -19,9 +19,7 @@ and then run the python script by typing:
 ```bash
 $ python sorter.py
 ```
-<p>It will move the files inside your Download folder to the specified subfolder (according to the file extension) created by <code>$ sh mdir.sh</code>.
-<br>Once it starts, it will always running in the background until you stop it by hit <code>ctrl+c</code> or
- the Termux app is closed.</p>
+<p>It will move the files inside your Download folder to the specified subfolder (according to the file extension) created by <code>$ sh mdir.sh</code>.</p>
 Have a nice day, friends ✨
 <h3>was inspired by:
 https://youtu.be/JNl2krTKf-s
