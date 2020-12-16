@@ -9,6 +9,7 @@ folders = ["Video","Images","Music","Apps","Documents","Icons","Compressed","Oth
 vids = ["mp4","mkv","avi","mov"]
 imgs = ["jpg","jpeg","img"]
 icons = ["png","ico"]
+auds = ["mp3","aac","m4a"]
 docx = ["docx","doc","pdf","epub","bok","pptx","xlsx"]
 apks = ["apk","xapk","exe"]
 comps = ["zip","rar","tar","gz","iso","7z","bz2","jar","lzma"]
@@ -26,22 +27,24 @@ for fl in files:
         elif ext in imgs:
             shutil.move(fl, dl+folders[1])
             print(fl,"has been moved to",dl+folders[1])
-        elif ext in apks:
+        elif ext in auds:
             shutil.move(fl, dl+folders[2])
             print(fl,"has been moved to",dl+folders[2])
-        elif ext in docx:
+        elif ext in apks:
             shutil.move(fl, dl+folders[3])
             print(fl,"has been moved to",dl+folders[3])
-        elif ext in icons:
+        elif ext in docx:
             shutil.move(fl, dl+folders[4])
             print(fl,"has been moved to",dl+folders[4])
-       elif ext in comps:
+       elif ext in icons:
             shutil.move(fl, dl+folders[5])
             print(fl,"has been moved to",dl+folders[5])
-       else:
+       elif ext in comps:
             shutil.move(fl, dl+folders[6])
             print(fl,"has been moved to",dl+folders[6])
-
+       else:
+            shutil.move(fl, dl+folders[7]) 
+            print(fl,"has been moved to",dl+folders[7])
 
 print("\nNow you can chill!\n")
 
