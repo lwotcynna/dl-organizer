@@ -23,6 +23,6 @@ $ python sorter.py
 <br>Once it starts, it will always running in the background until you stop it by hit <code>ctrl+c</code> or
  the Termux app is closed.</p>
 Have a nice day, friends ✨
-<h3>This project was inspired by:
+<h3>was inspired by:
 https://youtu.be/JNl2krTKf-s
 </h3>
