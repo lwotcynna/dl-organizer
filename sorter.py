@@ -43,7 +43,7 @@ for fl in files:
             print(fl,"has been moved to",dl+folders[6])
 
 
-print("Save your time and you can chill!")
+print("\nNow you can chill!\n")
 
 
 
