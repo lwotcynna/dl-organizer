@@ -11,8 +11,8 @@ for i in range(len(folders)):
       os.makedirs(dl+folders[i])
    if os.path.exists(dl+folders[i]) == False:
       mkdirs()
-      os.system("echo '\n\e[92mSuccessfully created folder'")
-
+      os.system("echo '\n\e[92mSuccessfully created folder:'")
+      print(folders[i]) 
 
 # Declaring files' formats with arrays
 vids = ["mp4","mkv","avi","mov"]
