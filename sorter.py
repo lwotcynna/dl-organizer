@@ -5,10 +5,11 @@ import os, shutil
 dl = "/sdcard/Download/"
 folders = ["Video","Images","Music","Apps","Documents","Icons","Compressed","Others"]
 
+# try to create destination folder 
 try:
     for i in range(len(folders)):
         os.mkdir(dir+folders[i])
-except:
+except: # pass if the folders exist
     print("OK!")
 
 # Declaring files' formats with arrays
