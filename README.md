@@ -10,10 +10,15 @@ Open Termux app and then type:
 ```bash
 $ pkg update && pkg upgrade -y
 $ pkg install git python 
+```
+clone this repo:
+```bash
 $ git clone https://github.com/annazc-ann/dl-organizer
+```
+enter the cloned dir:
+```bash
 $ cd dl-organizer/
 $ chmod +x *
-$ sh mdir.sh
 ```
 and then run the python script by typing:
 ```bash
