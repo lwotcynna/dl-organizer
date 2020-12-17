@@ -24,7 +24,7 @@ and then run the python script by typing:
 ```bash
 $ python sorter.py
 ```
-<p>It will move the files inside your Download folder to the specified subfolder (according to the file extension).</p>
+<p>It will move the files inside your <code>Download/</code> folder to the specified subfolder (according to the file extension).</p>
 Have a nice day, friends ✨
 
 ### was inspired by:
