@@ -7,7 +7,7 @@ folders = ["Video","Images","Music","Apps","Documents","Icons","Compressed","Oth
 
 try:
     for i in range(len(folders)):
-        os.mkdir(folders[i])
+        os.mkdir(dir+folders[i])
 except:
     print("OK!")
 
