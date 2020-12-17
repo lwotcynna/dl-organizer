@@ -7,10 +7,10 @@ folders = ["Video","Images","Music","Apps","Documents","Icons","Compressed","Oth
 
 # try to create destination folder 
 try:
-    for i in range(len(folders)):
-        os.mkdir(dir+folders[i])
+   for i in range(len(folders)):
+      os.makedirs(dl+folders[i])
 except: # pass if the folders exist
-    print("OK!")
+   os.system("echo '\n\e[92mOK!\e[0m'")
 
 # Declaring files' formats with arrays
 vids = ["mp4","mkv","avi","mov"]
@@ -26,55 +26,37 @@ os.chdir(dl)
 
 files = os.listdir("./") # scan all files inside cwd
 for fl in files:
-    if os.path.isfile(fl): # isfile only
-        ext = (fl.split(".")[-1]).lower() # split and convert extension to lowercase
-        try:
-            if ext in vids:
-               shutil.move(fl, dl+folders[0]) # start moving 
-               print(fl,"has been moved to",dl+folders[0])
-            elif ext in imgs:
-               shutil.move(fl, dl+folders[1])
-               print(fl,"has been moved to",dl+folders[1])
-            elif ext in auds:
-               shutil.move(fl, dl+folders[2])
-               print(fl,"has been moved to",dl+folders[2])
-            elif ext in apks:
-               shutil.move(fl, dl+folders[3])
-               print(fl,"has been moved to",dl+folders[3])
-            elif ext in docx:
-               shutil.move(fl, dl+folders[4])
-               print(fl,"has been moved to",dl+folders[4])
-            elif ext in icons:
-               shutil.move(fl, dl+folders[5])
-               print(fl,"has been moved to",dl+folders[5])
-            elif ext in comps:
-               shutil.move(fl, dl+folders[6])
-               print(fl,"has been moved to",dl+folders[6])
-            else:
-               shutil.move(fl, dl+folders[7]) 
-               print(fl,"has been moved to",dl+folders[7])
-        except:
-            print("Can't move some files, file already exist") 
+   if os.path.isfile(fl): # isfile only
+      ext = (fl.split(".")[-1]).lower() # split and convert extension to lowercase
+      try:
+         if ext in vids:
+            shutil.move(fl, dl+folders[0]) # start moving 
+            print(fl,"has been moved to",dl+folders[0])
+         elif ext in imgs:
+            shutil.move(fl, dl+folders[1])
+            print(fl,"has been moved to",dl+folders[1])
+         elif ext in auds:
+            shutil.move(fl, dl+folders[2])
+            print(fl,"has been moved to",dl+folders[2])
+         elif ext in apks:
+            shutil.move(fl, dl+folders[3])
+            print(fl,"has been moved to",dl+folders[3])
+         elif ext in docx:
+            shutil.move(fl, dl+folders[4])
+            print(fl,"has been moved to",dl+folders[4])
+         elif ext in icons:
+            shutil.move(fl, dl+folders[5])
+            print(fl,"has been moved to",dl+folders[5])
+         elif ext in comps:
+            shutil.move(fl, dl+folders[6])
+            print(fl,"has been moved to",dl+folders[6])
+         else:
+            shutil.move(fl, dl+folders[7]) 
+            print(fl,"has been moved to",dl+folders[7])
+      except:
+         print("Can't move file, file already exist") 
 
-print("\nNow you can chill!\n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+os.system('echo "\n\e[92mNow you can chill!\e[0m\n"')
 
 
 
