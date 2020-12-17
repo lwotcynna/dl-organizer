@@ -46,10 +46,10 @@ for fl in files:
             elif ext in icons:
                shutil.move(fl, dl+folders[5])
                print(fl,"has been moved to",dl+folders[5])
-           elif ext in comps:
+            elif ext in comps:
                shutil.move(fl, dl+folders[6])
                print(fl,"has been moved to",dl+folders[6])
-           else:
+            else:
                shutil.move(fl, dl+folders[7]) 
                print(fl,"has been moved to",dl+folders[7])
        except:
