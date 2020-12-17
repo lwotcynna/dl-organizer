@@ -53,8 +53,8 @@ for fl in files:
             else:
                shutil.move(fl, dl+folders[7]) 
                print(fl,"has been moved to",dl+folders[7])
-       except:
-           print("Can't move some files, file already exist") 
+        except:
+            print("Can't move some files, file already exist") 
 
 print("\nNow you can chill!\n")
 
