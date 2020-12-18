@@ -25,7 +25,7 @@ and then run the python script by typing:
 $ python sorter.py
 ```
 <p>It will move the files inside your <code>Download/</code> folder to the specified subfolder (according to the file extension).
-Once it starts, it will always running on background until you stop it by hit<code> ctrl + c </code>or the Termux app is closed. <br>
+<br>Once it starts, it will always running on background until you stop it by hit<code> ctrl + c </code>or the Termux app is closed. <br>
 <br>So when you download something (especially with chrome), it will immediately move your downloaded file once it finished. </p>
 
 Have a nice day, friends ✨
