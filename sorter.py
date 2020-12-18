@@ -67,7 +67,7 @@ def loop():
                if fl == exists:
                   print(f"\n{style.FAIL}Can't move {fl}, already exist") 
                   pass
-   os.system('echo "\n\e[92mNow you can chill!\e[0m\n"')
+
 while True:
    loop()
    
