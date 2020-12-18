@@ -64,7 +64,7 @@ def loop():
          except:
             for x in range(len(folders)):
                exists = os.path.isfile(folders[x])
-               if fl == exists:
+               if exists:
                   print(f"\n{style.FAIL}Can't move {fl}, already exist") 
                   pass
 
