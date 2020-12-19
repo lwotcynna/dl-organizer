@@ -51,7 +51,7 @@ def loop():
             for x in range(len(folders)):
                exists = os.listdir(folders[x])
                if fl in exists:
-                  print(f"\n{style.FAIL}Can't move {fl}, already exist"+style.ENDC) 
+                  #print(f"\n{style.FAIL}Can't move {fl}, already exist"+style.ENDC) 
                   pass
 
 while True:
