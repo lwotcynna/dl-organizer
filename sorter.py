@@ -12,11 +12,11 @@ vids = ["mp4","mkv","avi","mov"]
 imgs = ["jpg","jpeg","img"]
 auds = ["mp3","aac","m4a"]
 apks = ["apk","xapk","exe"]
-docx = ["docx","doc","pdf","epub","bok","pptx","xlsx"]
+docx = ["docx","doc","pdf","epub","bok","pptx","xlsx","txt"]
 icons = ["png","ico"]
 comps = ["zip","rar","tar","gz","xz","iso","7z","bz2","jar","lzma"]
 
-formats = [vids,imgs,auds,apks,docx,icons,comps]
+#formats = [vids,imgs,auds,apks,docx,icons,comps]
 
 exception = 'crdownload'
 
@@ -26,35 +26,53 @@ for i in range(len(folders)):
       os.makedirs(dl+folders[i])
       print(style.OKGREEN+"Successfully created folder:",style.HEADER+dl+style.OKBLUE+folders[i])
       
-# change the current working directory (cwd) to dl path
-os.chdir(dl)
 
-def loop():
+def sortit():
+
    files = os.listdir("./") # scan all files inside cwd
    for fl in files:
       if os.path.isfile(fl): # isfile only
          hidden = fl.startswith('.')
          ext = (fl.split(".")[-1]).lower() # split and convert extension to lowercase
+        
          try:
-            for i in range(len(folders)):
-                if hidden:
-                    pass
-                elif ext in exception:
-                    pass
-                elif ext in formats[i]:
-                    shutil.move(fl, folders[i]) # start moving 
-                    print(fl,"has been moved to",dl+folders[i])
-                else:
-                    shutil.move(fl,folders[-1])
-                    print(fl,"has been moved to",dl+folders[-1])
-         except:
-            for x in range(len(folders)):
-               exists = os.listdir(folders[x])
-               if fl in exists:
-                  #print(f"\n{style.FAIL}Can't move {fl}, already exist"+style.ENDC) 
-                  pass
+             if hidden or ext in exception:
+                 pass
+             elif ext in vids:
+                 shutil.move(fl,folders[0])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[0]+style.ENDC)
+             elif ext in imgs:
+                 shutil.move(fl,folders[1])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[1]+style.ENDC)
+             elif ext in auds:
+                 shutil.move(fl,folders[2])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[2]+style.ENDC)
+             elif ext in apks:
+                 shutil.move(fl,folders[3])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[3]+style.ENDC)
+             elif ext in docx:
+                 shutil.move(fl,folders[4])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[4]+style.ENDC)
+             elif ext in icons:
+                 shutil.move(fl,folders[5])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[5]+style.ENDC)
+             elif ext in comps:
+                 shutil.move(fl,folders[6])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[6]+style.ENDC)
+             else:
+                 shutil.move(fl,folders[-1])
+                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[-1]+style.ENDC)
 
+         except:
+             pass
+# change the current working directory (cwd) to dl path
+os.chdir(dl)
+
+input(style.WARNING+"***\nThis script will running in the background until you stop it\n[CTRL+C]. Your downloaded or moved file to the Download/ folder will automatically move to its subfolder.\npress enter to continue\n***"+style.ENDC)
+print(style.OKGREEN+"\nit's running...\n")
+
+# make it possible to run in background
 while True:
-   loop()
+   sortit()
    
    
