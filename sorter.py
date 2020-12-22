@@ -4,16 +4,15 @@ from styl import * # styling terminal output
 
 # Download path
 dl = "/sdcard/Download/"
-folders = ["Video","Images","Music","Apps","Documents","Icons","Compressed","Others"]
+folders = ["Video","Images","Music","Apps","Documents","Compressed","Others"]
    
 # declaring file formats with arrays
 # you can add your desired file format
 vids = ["mp4","mkv","avi","mov"]
-imgs = ["jpg","jpeg","img"]
+imgs = ["jpg","jpeg","img","png","ico"]
 auds = ["mp3","aac","m4a"]
 apks = ["apk","xapk","exe"]
 docx = ["docx","doc","pdf","epub","bok","pptx","xlsx","txt"]
-icons = ["png","ico"]
 comps = ["zip","rar","tar","gz","xz","iso","7z","bz2","jar","lzma"]
 
 exception = 'crdownload'
@@ -54,9 +53,6 @@ def sortit():
              elif ext in icons:
                  shutil.move(fl,folders[5])
                  print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[5]+style.ENDC)
-             elif ext in comps:
-                 shutil.move(fl,folders[6])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[6]+style.ENDC)
              else:
                  shutil.move(fl,folders[-1])
                  print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[-1]+style.ENDC)
@@ -66,7 +62,7 @@ def sortit():
 # change the current working directory (cwd) to dl path
 os.chdir(dl)
 
-input(style.WARNING+"***\nThis script will running in the background until you stop it\n[CTRL+C]. Your downloaded or moved file to the Download/ folder will automatically move to its subfolder.\npress enter to continue\n***"+style.ENDC)
+input(style.WARNING+"***\nThis script will running in the background until you stop it\n[CTRL+C]. Your downloaded or moved file to the Download/ folder will automatically move to its subfolder.\npress enter to continue\n***\n"+style.ENDC)
 print(style.OKGREEN+"\nit's running...\n")
 
 # make it possible to run in background
