@@ -16,8 +16,6 @@ docx = ["docx","doc","pdf","epub","bok","pptx","xlsx","txt"]
 icons = ["png","ico"]
 comps = ["zip","rar","tar","gz","xz","iso","7z","bz2","jar","lzma"]
 
-#formats = [vids,imgs,auds,apks,docx,icons,comps]
-
 exception = 'crdownload'
 
 # create destination folder 
