@@ -17,8 +17,7 @@ $ git clone https://github.com/annazc-ann/dl-organizer
 ```
 enter the cloned dir:
 ```bash
-$ cd dl-organizer/
-$ chmod +x *
+$ cd dl-organizer/ 
 ```
 and then run the python script by typing:
 ```bash
