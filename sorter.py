@@ -1,6 +1,7 @@
 # import the required modules
-import os, shutil
-from styl import * # styling terminal output
+import os
+import shutil as sh
+from colors import colorz as C # styling terminal output
 
 # Download path
 dl = "/sdcard/Download/"
@@ -14,59 +15,77 @@ auds = ["mp3","aac","m4a"]
 apks = ["apk","xapk","exe"]
 docx = ["docx","doc","pdf","epub","bok","pptx","xlsx","txt"]
 comps = ["zip","rar","tar","gz","xz","iso","7z","bz2","jar","lzma"]
-
 exception = 'crdownload'
+
+os.chdir('/sdcard')
+files = os.listdir("./") # scan all files inside cwd
+
 
 # create destination folder 
 for i in range(len(folders)):
-   if os.path.exists(dl+folders[i]) == False:
-      os.makedirs(dl+folders[i])
-      print(style.OKGREEN+"Successfully created folder:",style.HEADER+dl+style.OKBLUE+folders[i])
-      
+    if os.path.exists(dl+folders[i]) == False:
+        os.makedirs(dl+folders[i])
+        print(C.OK+"Successfully created folder:",C.HEAD+dl+C.BLUE+folders[i])
 
 def sortit():
-
-   files = os.listdir("./") # scan all files inside cwd
-   for fl in files:
-      if os.path.isfile(fl): # isfile only
-         hidden = fl.startswith('.')
-         ext = (fl.split(".")[-1]).lower() # split and convert extension to lowercase
+    files = os.listdir("./") # scan all files inside cwd
+    for fl in files:
+        if os.path.isfile(fl):
+            hidden = fl.startswith('.')
+            ext = (fl.split(".")[-1]).lower()
         
-         try:
-             if hidden or ext in exception:
-                 pass
-             elif ext in vids:
-                 shutil.move(fl,folders[0])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[0]+style.ENDC)
-             elif ext in imgs:
-                 shutil.move(fl,folders[1])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[1]+style.ENDC)
-             elif ext in auds:
-                 shutil.move(fl,folders[2])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[2]+style.ENDC)
-             elif ext in apks:
-                 shutil.move(fl,folders[3])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[3]+style.ENDC)
-             elif ext in docx:
-                 shutil.move(fl,folders[4])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[4]+style.ENDC)
-             elif ext in icons:
-                 shutil.move(fl,folders[5])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[5]+style.ENDC)
-             else:
-                 shutil.move(fl,folders[-1])
-                 print(style.HEADER+fl,style.OKGREEN+"moved to 👉", style.OKBLUE+"Download >", folders[-1]+style.ENDC)
+            try:
+                if hidden or ext in exception:
+                    pass
+                elif ext in vids:
+                    sh.move(fl,folders[0])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[0]+C.O)
+                elif ext in imgs:
+                    sh.move(fl,folders[1])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[1]+C.O)
+                elif ext in auds:
+                    sh.move(fl,folders[2])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[2]+C.O)
+                elif ext in apks:
+                    sh.move(fl,folders[3])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[3]+C.O)
+                elif ext in docx:
+                    sh.move(fl,folders[4])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[4]+C.O)
+                elif ext in comps:
+                    sh.move(fl,folders[5])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[5]+C.O)
+                else:
+                    sh.move(fl,folders[-1])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[-1]+C.O)
 
-         except:
-             pass
+            except FileExistsError:
+                print(C.FAIL+"Can't move",C.BLUE+fl+C.FAIL+", file exists")
+                pass
+
 # change the current working directory (cwd) to dl path
+
+input(C.WARN+"""
+*==================================================*
+| This script will running in the background until |
+| you stop it by hit [CTRL+C]                      |
+|                                                  |
+| Your downloaded or moved file to the Download/   |
+| folder will automatically move to its subfolder. |
+|                                                  |
+| [•••] Press enter to continue                    |
+*==================================================*
+"""+C.O)
+
+print("="*25)
+print(C.OK+"it's running...\n")
+
 os.chdir(dl)
-
-input(style.WARNING+"***\nThis script will running in the background until you stop it\n[CTRL+C]. Your downloaded or moved file to the Download/ folder will automatically move to its subfolder.\npress enter to continue\n***\n"+style.ENDC)
-print(style.OKGREEN+"\nit's running...\n")
-
-# make it possible to run in background
+# make it possible to always run in background
 while True:
-   sortit()
-   
+    try:
+        sortit()
+    except KeyboardInterrupt:
+        print(C.FAIL+"\nStopped!",C.O)
+        break
    
