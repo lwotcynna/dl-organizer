@@ -1,6 +1,8 @@
 # dl-organizer
 <p>Automatically sorts and arrange files on Your Download folder.</p>
 
+<img src="https://i.ibb.co/KGpLkh1/Screenshot-2021-01-13-18-19-16-142-com-termux.jpg">
+
 ## Requirements
 1. [Termux](https://play.google.com/store/apps/details?id=com.termux) app with storage access permission
 2. Internet connection (installing python) 
