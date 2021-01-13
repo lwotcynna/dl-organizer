@@ -13,7 +13,7 @@ $ pkg install git python -y
 ```
 clone this repo:
 ```bash
-$ git clone https://github.com/annazc-ann/dl-organizer
+$ git clone https://github.com/annzc/dl-organizer
 ```
 enter the cloned dir:
 ```bash
