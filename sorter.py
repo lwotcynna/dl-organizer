@@ -4,15 +4,15 @@ import shutil as sh
 from colors import colorz as C # styling terminal output
 
 # Download path
-dl = "/storage/D639-79B5/Download/"
-folders = ["Video","Images","Music","Apps","Documents","Compressed","Others"]
+dl = "/sdcard/Download/"
+folders = ["Video","Images","Music","Apps","Documents","Compressed","Script","Others"]
    
 # declaring file formats with arrays
 # you can add your desired file format
-vids = ["mp4","mkv","avi","mov"]
-imgs = ["jpg","jpeg","img","png","ico","webp"]
+vids = ["mp4","mkv","avi","mov","3gp"]
+imgs = ["jpg","jpeg","img","png","ico","webp","gif"]
 auds = ["mp3","aac","m4a"]
-apks = ["apk","xapk","exe"]
+apks = ["apk","xapk","exe","deb"]
 docx = ["docx","doc","pdf","epub","bok","pptx","xlsx","txt"]
 comps = ["zip","rar","tar","gz","xz","iso","7z","bz2","jar","lzma"]
 sc = ["html","css","js","py","cpp","c","xml","json"]
@@ -56,6 +56,9 @@ def sortit():
                 elif ext in comps:
                     sh.move(fl,folders[5])
                     print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[5]+C.O)
+                elif ext in sc:
+                    sh.move(fl,folders[6])
+                    print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[6]+C.O)
                 else:
                     sh.move(fl,folders[-1])
                     print(C.HEAD+fl,C.OK+"moved to 👉", C.BLUE+"Download >", folders[-1]+C.O)
