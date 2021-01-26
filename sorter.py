@@ -4,17 +4,18 @@ import shutil as sh
 from colors import colorz as C # styling terminal output
 
 # Download path
-dl = "/sdcard/Download/"
+dl = "/storage/D639-79B5/Download/"
 folders = ["Video","Images","Music","Apps","Documents","Compressed","Others"]
    
 # declaring file formats with arrays
 # you can add your desired file format
 vids = ["mp4","mkv","avi","mov"]
-imgs = ["jpg","jpeg","img","png","ico"]
+imgs = ["jpg","jpeg","img","png","ico","webp"]
 auds = ["mp3","aac","m4a"]
 apks = ["apk","xapk","exe"]
 docx = ["docx","doc","pdf","epub","bok","pptx","xlsx","txt"]
 comps = ["zip","rar","tar","gz","xz","iso","7z","bz2","jar","lzma"]
+sc = ["html","css","js","py","cpp","c","xml","json"]
 exception = 'crdownload'
 
 os.chdir('/sdcard')
@@ -62,6 +63,8 @@ def sortit():
             except FileExistsError:
                 print(C.FAIL+"Can't move",C.BLUE+fl+C.FAIL+", file exists")
                 pass
+            except:
+                pass
 
 # change the current working directory (cwd) to dl path
 
@@ -77,7 +80,7 @@ input(C.WARN+"""
 *==================================================*
 """+C.O)
 
-print("="*25)
+print("")
 print(C.OK+"it's running...\n")
 
 os.chdir(dl)
