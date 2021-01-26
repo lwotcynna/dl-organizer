@@ -4,7 +4,8 @@ import shutil as sh
 from colors import colorz as C # styling terminal output
 
 # Download path
-dl = "/sdcard/Download/"
+dl = "/storage/D639-79B5/Download/" # my external storage
+#dl = "/sdcard/Download/" # internal storage
 folders = ["Video","Images","Music","Apps","Documents","Compressed","Script","Others"]
    
 # declaring file formats with arrays
